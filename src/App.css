@@ -1,0 +1,191 @@
+
+body{
+  font-family: "neue-haas-unica", sans-serif;
+}
+
+.section-style::-webkit-scrollbar {
+  width: 2px;  /* 스크롤바의 너비 */
+}
+
+.section-style::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: black; /* 스크롤바의 색상 */
+}
+
+.section-style::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255);  /*스크롤바 뒷 배경 색상*/
+}
+
+.main-section{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.main-section-mo{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-style{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.section-style-mo{
+  border-right: none !important;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.header-button{
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: none;
+  font-weight:normal;
+  font-size: medium;
+  cursor: grab;
+}
+
+.header-button:hover{
+  text-decoration: underline 1px black;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+  height: 40px;
+}
+
+.footer{
+  position: fixed;
+  width: 50%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer>a{
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.footer>a:hover{
+  text-decoration: underline 1px black;
+}
+
+.project-wrapper{
+  width: 100%;
+}
+
+.project-table{
+  width: 97%;
+  padding-left: 20px;
+}
+
+.no-grab{
+  cursor: unset;
+  pointer-events: none;
+}
+.project-table>th{
+  border-bottom: solid 1px black;
+  cursor: grab;
+  font-size: small;
+}
+
+.project-table>th:hover{
+  background-color: #6AFF19;
+
+}
+
+.project-single-element{
+  margin-top: 5px;
+
+}
+
+.project-single-element>td{
+  font-size: 15px;
+}
+
+.project-single-element>td>i{
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.project-single-element{
+  transition: all 0.1s ease-in-out;
+}
+
+.project-single-element:hover{
+  text-decoration: underline 1px black;
+  background-color: #6AFF19;
+  cursor: grab;
+}
+
+.about-text-style{
+  font-weight: 400;
+  font-size: 15px;
+  word-break: keep-all;
+  margin: 10px 10px 0px 10px;
+}
+
+.link{
+  color: black;
+  text-decoration: none;
+  cursor: grab;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: underline 1px black;
+}
+
+.link:hover{
+  color: #6AFF19;
+  text-decoration: underline 1px #6AFF19;
+}
+
+.about-wrapper{
+  margin-top: 10px;
+}
+
+.media-wrapper{
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.show{
+  opacity: 1 !important;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.logo-img{
+  animation: rotate 15s infinite linear;
+}
+
+.cls-1{
+  fill: #6AFF19;
+}
