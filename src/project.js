@@ -1,9 +1,98 @@
 import React, { useState, createContext, useContext } from 'react';
+import { Document, Page } from 'react-pdf';
+
 import projectsdat from './projects_data.json'
 import './App.css';
 
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
+
 
 let projects = projectsdat.data;
+
+function ProjectPDF(props) {
+    let currentProject = projects[props.projectIndex]
+
+    const [numPages, setNumPages] = useState();
+    const [pageNumber, setPageNumber] = useState(1);
+  
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+    function changePage(offset) {
+        setPageNumber(prevPageNumber => prevPageNumber + offset);
+      }
+    
+      function previousPage() {
+        changePage(-1);
+      }
+    
+      function nextPage() {
+        changePage(1);
+      }
+    
+    let mediaWrapper = {
+        // background: 'black',
+        width : '100%',
+        display : 'flex',
+        flexDirection : 'column',
+        justifyContent : 'center',
+        alignItems : 'center',
+        paddingTop : '20px',
+        paddingBottom : '20px'
+    }
+    
+    
+    if(currentProject.pdf[0] === ""){
+        return(<div></div>)
+    }else{
+        return (
+
+            
+            <div style={mediaWrapper}>
+                <div style={{minHeight : "300px"}}>
+                    <Document file={currentProject.pdf[0]}  
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        options={{
+                            cMapUrl: '/cmaps/',
+                            standardFontDataUrl: '/standard_fonts/',
+                        }}>
+                        <Page 
+                            width={540}
+                            pageNumber={pageNumber} />
+                    </Document>
+                </div>
+                <div className='page-controls'>
+                    <p>
+                    </p>
+                    <button
+                        type="button"
+                        disabled={pageNumber <= 1}
+                        onClick={previousPage}
+                        >
+                        {"<"}
+                    </button>
+                    <span> {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'} </span>
+                    <button
+                        type="button"
+                        disabled={pageNumber >= numPages}
+                        onClick={nextPage}
+                        >
+                        {">"}
+                    </button>
+                </div>   
+            </div>
+          );
+    } 
+    
+  }
 
 function ProjectImage(props){
     let currentProject = projects[props.projectIndex]
@@ -33,7 +122,7 @@ function ProjectImage(props){
         paddingTop : '20px',
         paddingBottom : '20px'
     }
-
+    console.log(currentProject)
     if(currentProject.img[0] === ""){
         return(<div></div>)
     }else{
@@ -74,8 +163,6 @@ function Video(props){
             marginTop : '20px'
         }
     }
-
-    
 
     return(
         <video
@@ -229,6 +316,7 @@ function ProjectInfo(props){
                 <a href={currentProject.link[0]} target='_blank' rel='noreferrer' style={textStyle_small} className='link'>{currentProject.link[1]}</a>
                 <ProjectImage mobile = {props.mobile} style={wrapperStyle} projectIndex = {props.projectIndex} className={classStat} onLoadedData={showClass}/>
                 <ProjectVideo mobile = {props.mobile} projectIndex = {props.projectIndex}/>
+                <ProjectPDF mobile = {props.mobile} projectIndex = {props.projectIndex}/>
                 <Youtube projectIndex = {props.projectIndex} />
             </div>
         </ProjectContext.Provider>

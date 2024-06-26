@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import React, { useState, createContext, useContext } from 'react';
 import {useMediaQuery} from 'react-responsive';
+
 import projectsdat from './projects_data.json'
 import ProjectInfo from './project';
 import './App.css';
 import AboutLink from './components/AboutLink';
 import AboutPlainText from './components/AboutPlainText';
+
+
+
 
 const Mobile = ({children}) => {
   const isMobile = useMediaQuery({

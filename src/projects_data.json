@@ -1,6 +1,36 @@
 {
     "data" : [
     {
+        "title": "전자 음악 합주를 위한 디지털 악기 및 몰입 공간 디자인",
+        "status": "done",
+        "year": 2024,
+        "scope": "M.S.",
+        "type" : "individual",
+        "mainDescriptionEN": "",
+        "mainDescriptionKR": "본 연구는 일반 대중이 쉽게 접근하고 몰입할 수 있는 전자 음악 앙상블 경험을 제공하는 새로운 형태의 인터랙티브 공간을 설계하고 구현하는 것을 목표로 한다. 이를 위해 본 연구는 사운드 디자인을 진행하고, 파일럿 테스트를 통해 피드백을 수집하였다. 이후 수집된 피드백을 바탕으로 악기 디자인과 공간 디자인을 완성하였다. 이후 평가 과정에서는 전문가와 일반 대중을 대상으로 실험을 진행하였으며, 전문가 평가에서는 악보 분석과 작곡 방식에 초점을 맞추어 시스템의 음악적 표현력과 인터랙티브 요소의 효과를 검증하였다. 일반 대중 평가에서는 시스템의 사용성, 몰입감, 창의적 표현 가능성 및 협업에 미치는 영향을 평가하였다. 인터뷰 데이터는 어피니티 다이어그램을 통해 분석하여 주요 테마를 도출하였다. 본 연구에서 고안된 악기와 공간은 전문가와 일반 대중 모두에게 창의적이고 몰입적인 음악적 경험을 제공하는 데 유효한 도구임이 확인되었다. 그러나 기술적 한계와 사용자 인터페이스 개선의 필요성도 드러났다. 본 연구는 새로운 디지털 악기의 잠재력과 사용성에 대한 초기 평가를 제공하며, 향후 더욱 발전된 디지털 악기를 개발하여 음악적 창의성을 증진시키는 데 기여할 수 있을 것으로 기대된다.",
+        "subDescription": "This study aims to design and implement a new type of interactive space that provides an electronic music ensemble experience easily accessible and engaging for the general public. To achieve this, the study conducted sound design and collected feedback through pilot testing. Based on the collected feedback, the instrument and space designs were finalized. In the evaluation phase, experiments were conducted targeting both experts and the general public. The expert evaluation focused on analyzing scores and composition methods to verify the system's musical expressiveness and the effectiveness of interactive elements. The evaluation for the general public assessed the system's usability, immersion, potential for creative expression, and impact on collaboration. Interview data were analyzed through an affinity diagram to identify key themes. The instruments and spaces devised in this study were confirmed to be effective tools in providing creative and immersive musical experiences for both experts and the general public. However, technical limitations and the need for user interface improvements were also revealed. This research provides an initial evaluation of the potential and usability of new digital instruments, expecting to contribute to enhancing musical creativity through the development of more advanced digital instruments in the future.",
+        "link": [
+            "https://soulmilk98.github.io/portfolio/Project/Cube/",
+            "비디오 및 음악"
+        ],
+        "url": "/Cube",
+        "img": [
+            "project_img/Cube1.png",
+            "project_img/Cube2.png"
+        ],
+        "vid": [
+            ""
+        ],
+        "youtube": [
+            "https://www.youtube.com/embed/ZI4hDqxyyLg",
+            "https://www.youtube.com/embed/H0WOKQP2NWo",
+            "https://www.youtube.com/embed/Aim2almhaUk",
+            "https://www.youtube.com/embed/ooTvP6uQYbM"
+        ],
+        "pdf" : [
+            "project_pdf/Cube.pdf"
+        ]
+    },{
         "title": "타이틀",
         "status": "done",
         "year": 2024,
@@ -21,6 +51,9 @@
             ""
         ],
         "youtube": [
+            ""
+        ],
+        "pdf" : [
             ""
         ]
     },{
@@ -45,28 +78,8 @@
         ],
         "youtube": [
             ""
-        ]
-    },{
-        "title": "타이틀",
-        "status": "done",
-        "year": 2024,
-        "scope": "역할",
-        "type" : "team(2 people)",
-        "mainDescriptionEN": "",
-        "mainDescriptionKR": "",
-        "subDescription": "",
-        "link": [
-            "",
-            ""
         ],
-        "url": "",
-        "img": [
-            ""
-        ],
-        "vid": [
-            ""
-        ],
-        "youtube": [
+        "pdf" : [
             ""
         ]
     }
