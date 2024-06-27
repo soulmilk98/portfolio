@@ -50,37 +50,7 @@ function ProjectPDF(props) {
         paddingBottom : '20px',
         background : "#eee"
     }
-    const buttonStyle = {
-        position: 'absolute',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '50%',
-        width: '40px',
-        height: '40px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        opacity: 0,
-        transition: 'opacity 0.3s'
-    };
-
-    const buttonContainerStyle = {
-        position: 'absolute',
-        top: '0',
-        bottom: '0',
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '100%'
-    };
-
-    const showButton = {
-        opacity: 1
-    };
-
+    
     
     if(currentProject.pdf[0] === ""){
         return(<div></div>)
@@ -100,24 +70,7 @@ function ProjectPDF(props) {
                             pageNumber={pageNumber} />
                     </Document>
                 </div>
-                <div style={buttonContainerStyle}>
-                    <button
-                        type="button"
-                        onClick={previousPage}
-                        style={{ ...buttonStyle, left: '10px' }}
-                        className="hover-button"
-                    >
-                        {"<"}
-                    </button>
-                    <button
-                        type="button"
-                        onClick={nextPage}
-                        style={{ ...buttonStyle, right: '10px' }}
-                        className="hover-button"
-                    >
-                        {">"}
-                    </button>
-                </div>
+                
                 <div className='page-controls'>
                     <button
                         type="button"
@@ -355,15 +308,38 @@ function ProjectInfo(props){
         <ProjectContext.Provider value={{stat:projectState, setStat:setProject}} >
             <div>
                 <p style={textStyle}>{currentProject.title}</p>
-                <p style={textStyle}>{currentProject.year}</p>
-                <p style={textStyle}>{currentProject.scope}</p>
+                <p style={textStyle}>{currentProject.year}</p>{
+                    currentProject.status != "music" && <p style={textStyle}>{currentProject.scope}</p>
+                }
                 <p style={textStyle_small}>{currentProject.mainDescriptionEN}</p>
                 <p style={textStyle_small}>{currentProject.mainDescriptionKR}</p>
                 <p style={textStyle_small}>{currentProject.subDescription}</p>
                 <a href={currentProject.link[0]} target='_blank' rel='noreferrer' style={textStyle_small} className='link'>{currentProject.link[1]}</a>
+
                 <Youtube projectIndex = {props.projectIndex} />
                 <ProjectPDF mobile = {props.mobile} projectIndex = {props.projectIndex}/>
                 <ProjectImage mobile = {props.mobile} style={wrapperStyle} projectIndex = {props.projectIndex} className={classStat} onLoadedData={showClass}/>
+                {
+                   currentProject.status === "music" && 
+                    (<>
+                        <br />
+                        <p style={{...textStyle_small, textAlign:"center", marginTop : '0px'}}>{currentProject.linkCenter[1]}</p><p href={currentProject.linkCenter[0]} target='_blank' rel='noreferrer' style={{...textStyle_small, textAlign:"center", marginTop : '0px'}} className='link'>{"Link"}</p>
+                    </>
+                    )
+                }
+               
+                {
+                    //for music
+                    currentProject.status === "music" && currentProject.listCenter.map(function(list, index){
+                        return(
+                            <>
+                                <p style={{...textStyle_small, textAlign:"center", marginTop : '0px'}}>{list}</p>
+                                <br/>
+                            </>
+                        )})
+                }
+                <br/>
+                
             </div>
         </ProjectContext.Provider>
         

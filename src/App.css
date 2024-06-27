@@ -96,6 +96,8 @@ body{
   cursor: unset;
   pointer-events: none;
 }
+
+
 .project-table>th{
   border-bottom: solid 1px black;
   cursor: grab;
@@ -130,6 +132,12 @@ body{
   text-decoration: underline 1px black;
   background-color: #6AFF19;
   cursor: grab;
+}
+.music:hover{
+  background-color: #563AFF;
+  color: #fff;  
+  text-decoration: underline 1px #fff;
+
 }
 
 .about-text-style{

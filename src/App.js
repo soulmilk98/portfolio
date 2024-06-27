@@ -8,16 +8,6 @@ import './App.css';
 import AboutLink from './components/AboutLink';
 import AboutPlainText from './components/AboutPlainText';
 
-import { Document, Page } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
-
-
 
 const Mobile = ({children}) => {
   const isMobile = useMediaQuery({
@@ -66,25 +56,25 @@ function ProjectWrapper(props){
   const sortYear = (i) => {
     projects.sort((a, b) => i === 0 
       ? Number(b.year) - Number(a.year) 
-      : Number(a.year) - Number(b.year));
+      : Number(a.year) - Number(b.year)).sort((a, b) => a.status.localeCompare(b.status));
   };
   
   const sortType = (i) => {
     projects.sort((a, b) => i === 0 
       ? b.type.localeCompare(a.type) 
-      : a.type.localeCompare(b.type));
+      : a.type.localeCompare(b.type)).sort((a, b) => a.status.localeCompare(b.status));
   };
   
   const sortName = (i) => {
     projects.sort((a, b) => i === 0 
       ? b.title.localeCompare(a.title) 
-      : a.title.localeCompare(b.title));
+      : a.title.localeCompare(b.title)).sort((a, b) => a.status.localeCompare(b.status));
   };
   
   const sortScope = (i) => {
     projects.sort((a, b) => i === 0 
-      ? b.scope.localeCompare(a.title) 
-      : a.scope.localeCompare(b.title));
+      ? b.scope.localeCompare(a.scope) 
+      : a.scope.localeCompare(b.scope)).sort((a, b) => a.status.localeCompare(b.status));
   };
   
   
@@ -106,13 +96,12 @@ function ProjectWrapper(props){
       break;
     case 'year1' :
       sortYear(1);
-      console.log(12312312)
       break;
     case 'scope1' :
       sortScope(1);
       break;
     default :
-      sortYear((0));
+      sortYear(0);
       break;
   }
   
@@ -127,6 +116,7 @@ function ProjectWrapper(props){
 
       {
         projects.map(function(project, index){
+          console.log(project.status)
           if(project.status === 'wip'){
             return(
             <tr className='project-single-element no-grab' onClick={()=>{alert('This project is in progress!')}}>
@@ -134,7 +124,18 @@ function ProjectWrapper(props){
               <td>{project.year}</td>
             </tr>
           )
-          }else{
+          }else if(project.status === "music"){
+            <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+              <td>{project.title}</td>
+              <td>{project.year}</td>
+            </tr>
+          }else if(project.status === "mus"){
+            <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+          }
+          else{
             return(
             <tr className='project-single-element' onClick={()=>{goToProject(index)}}>
               <td>{project.title}</td>
@@ -164,11 +165,44 @@ function ProjectWrapper(props){
               return(
               <tr className='project-single-element no-grab' onClick={()=>{alert('This project is in progress!')}}>
                 <td>{project.title} <i>&#40;work in progress&#41;</i></td>
+                <td>{project.scope}</td>
                 <td>{project.type}</td>
                 <td>{project.year}</td>
               </tr>
             )
-            }else{
+            }else if (project.status === 'music'){
+              return(
+              <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+                <td>{project.title}</td>
+                <td>{project.scope}</td>
+                <td>{project.type}</td>
+                <td>{project.year}</td>
+              </tr>
+            )
+            }else if(project.status === "mus"){
+              // 구분선
+              return(
+              <>
+                <tr className='project-single-element no-grab'>
+                  <td height={"15px"} ></td>
+                </tr>
+
+                <tr className='project-single-element music no-grab'>
+              
+                  <td  valign={"bottom"} align={"center"} colSpan={4}>
+                    
+                    <a
+                      style={{textAlign:"justify", width:"100%",fontWeight: "bold", fontStyle: "italic"}} >
+                      {"Music Project"}
+                    </a>
+                    
+                  </td>
+                  
+                </tr>
+              </>
+              )
+            }
+            else{
               return(
               <tr className='project-single-element' onClick={()=>{goToProject(index)}}>
                 <td>{project.title}</td>
