@@ -22,7 +22,7 @@ function ProjectPDF(props) {
 
     const [numPages, setNumPages] = useState();
     const [pageNumber, setPageNumber] = useState(1);
-  
+    
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
@@ -40,13 +40,15 @@ function ProjectPDF(props) {
     
     let mediaWrapper = {
         // background: 'black',
+        height : currentProject.pdf[1],
         width : '100%',
         display : 'flex',
         flexDirection : 'column',
         justifyContent : 'center',
         alignItems : 'center',
         paddingTop : '20px',
-        paddingBottom : '20px'
+        paddingBottom : '20px',
+        background : "#eee"
     }
     
     
@@ -54,12 +56,11 @@ function ProjectPDF(props) {
         return(<div></div>)
     }else{
         return (
-
-            
             <div style={mediaWrapper}>
-                <div style={{minHeight : "300px"}}>
+                <div>
                     <Document file={currentProject.pdf[0]}  
                         onLoadSuccess={onDocumentLoadSuccess}
+                        onSourceSuccess={()=>{setPageNumber(1)}}
                         options={{
                             cMapUrl: '/cmaps/',
                             standardFontDataUrl: '/standard_fonts/',
@@ -70,8 +71,6 @@ function ProjectPDF(props) {
                     </Document>
                 </div>
                 <div className='page-controls'>
-                    <p>
-                    </p>
                     <button
                         type="button"
                         disabled={pageNumber <= 1}
@@ -314,10 +313,9 @@ function ProjectInfo(props){
                 <p style={textStyle_small}>{currentProject.mainDescriptionKR}</p>
                 <p style={textStyle_small}>{currentProject.subDescription}</p>
                 <a href={currentProject.link[0]} target='_blank' rel='noreferrer' style={textStyle_small} className='link'>{currentProject.link[1]}</a>
-                <ProjectImage mobile = {props.mobile} style={wrapperStyle} projectIndex = {props.projectIndex} className={classStat} onLoadedData={showClass}/>
-                <ProjectVideo mobile = {props.mobile} projectIndex = {props.projectIndex}/>
-                <ProjectPDF mobile = {props.mobile} projectIndex = {props.projectIndex}/>
                 <Youtube projectIndex = {props.projectIndex} />
+                <ProjectPDF mobile = {props.mobile} projectIndex = {props.projectIndex}/>
+                <ProjectImage mobile = {props.mobile} style={wrapperStyle} projectIndex = {props.projectIndex} className={classStat} onLoadedData={showClass}/>
             </div>
         </ProjectContext.Provider>
         

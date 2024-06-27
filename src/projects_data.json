@@ -22,65 +22,68 @@
             ""
         ],
         "youtube": [
-            "https://www.youtube.com/embed/ZI4hDqxyyLg",
-            "https://www.youtube.com/embed/H0WOKQP2NWo",
-            "https://www.youtube.com/embed/Aim2almhaUk",
-            "https://www.youtube.com/embed/ooTvP6uQYbM"
+            "https://www.youtube.com/embed/ZI4hDqxyyLg"
+            
         ],
         "pdf" : [
-            "project_pdf/Cube.pdf"
+            "project_pdf/Cube.pdf",
+            330
         ]
-    },{
-        "title": "타이틀",
+    },
+    {
+        "title": "Unseen Forces: Social Dynamics in a Changing Force ",
         "status": "done",
-        "year": 2024,
-        "scope": "역할",
-        "type" : "team(2 people)",
-        "mainDescriptionEN": "",
-        "mainDescriptionKR": "",
+        "year": 2023,
+        "scope": "Media Art",
+        "type" : "team(3 people)",
+        "mainDescriptionEN": "In this work, we speculated Anthropocene that humans continue to create, maintain, and destroy through social interaction, with a new perspective.",
+        "mainDescriptionKR": "이 작품에서 우리는 인류세라는 개념에 대해 새로운 시선으로 인간이 사회적 상호작용을 통해 이 시대를 계속해서 만들고 유지하고 파괴하고 있다는 것을 표현했다.",
         "subDescription": "",
         "link": [
-            "",
-            ""
+            
         ],
-        "url": "",
+        "url": "/UnseenForces",
         "img": [
-            ""
+            
         ],
         "vid": [
             ""
         ],
         "youtube": [
-            ""
+            "https://www.youtube.com/embed/BNvFH9zUGHc"
+            
         ],
         "pdf" : [
-            ""
+            "project_pdf/UnseenForces.pdf",
+            800
         ]
-    },{
-        "title": "타이틀",
+    },
+    {
+        "title": "Mistique Mirror",
         "status": "done",
-        "year": 2024,
-        "scope": "역할",
+        "year": 2022,
+        "scope": "Media Art",
         "type" : "team(2 people)",
-        "mainDescriptionEN": "",
+        "mainDescriptionEN": "Mistique Mirror: A mirror that morphs you into a different identity. ",
         "mainDescriptionKR": "",
-        "subDescription": "",
+        "subDescription": "Have you ever want to be a hero? Or a villian? Or just a someone else? Here's special mirror for you.",
         "link": [
-            "",
-            ""
+            
         ],
-        "url": "",
+        "url": "/MistiqueMirror",
         "img": [
-            ""
+           ""
         ],
         "vid": [
             ""
         ],
         "youtube": [
-            ""
+            "https://www.youtube.com/embed/bCuZBsXxobU"
+            
         ],
         "pdf" : [
-            ""
+            "project_pdf/MistiqueMirror.pdf",
+            800
         ]
     }
 ]

@@ -8,6 +8,14 @@ import './App.css';
 import AboutLink from './components/AboutLink';
 import AboutPlainText from './components/AboutPlainText';
 
+import { Document, Page } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 
 
@@ -73,6 +81,12 @@ function ProjectWrapper(props){
       : a.title.localeCompare(b.title));
   };
   
+  const sortScope = (i) => {
+    projects.sort((a, b) => i === 0 
+      ? b.scope.localeCompare(a.title) 
+      : a.scope.localeCompare(b.title));
+  };
+  
   
   switch(sortState){
     case'type' :
@@ -80,6 +94,9 @@ function ProjectWrapper(props){
       break;
     case 'name' :
       sortName(0);
+      break;
+    case 'scope' :
+      sortScope(0);
       break;
     case'type1' :
       sortType(1);
@@ -90,6 +107,9 @@ function ProjectWrapper(props){
     case 'year1' :
       sortYear(1);
       console.log(12312312)
+      break;
+    case 'scope1' :
+      sortScope(1);
       break;
     default :
       sortYear((0));
@@ -133,8 +153,10 @@ function ProjectWrapper(props){
         <h1 style={titleStyle}>{props.projectTitle}</h1>
         <table className='project-table'>
         <th align='start' onClick={() => sortState === 'name' ? setSort('name1') : setSort('name')}>NAME</th>
+        <th align='start' onClick={() => sortState === 'year' ? setSort('scope1') : setSort('scope')}>Scope</th>
         <th align='start' onClick={() => sortState === 'type' ? setSort('type1') : setSort('type')}>PROJECT TYPE</th>
         <th align='start' onClick={() => sortState === 'year' ? setSort('year1') : setSort('year')}>YEAR</th>
+        
 
         {
           projects.map(function(project, index){
@@ -150,6 +172,7 @@ function ProjectWrapper(props){
               return(
               <tr className='project-single-element' onClick={()=>{goToProject(index)}}>
                 <td>{project.title}</td>
+                <td>{project.scope}</td>
                 <td>{project.type}</td>
                 <td>{project.year}</td>
               </tr>
@@ -206,10 +229,33 @@ function RightSection(props){
   }
 
   let imageStyle = {
-    width : '450px',
+    width : '350px',
     height : 'auto',
     marginTop : '20px'
   }
+
+  //about PDF
+  const [numPages, setNumPages] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+      setNumPages(numPages);
+  }
+  function changePage(offset) {
+      setPageNumber(prevPageNumber => prevPageNumber + offset);
+    }
+  
+  let mediaWrapper = {
+      // background: 'black',
+      width : '100%',
+      display : 'flex',
+      flexDirection : 'column',
+      justifyContent : 'center',
+      alignItems : 'center',
+      paddingTop : '20px',
+      paddingBottom : '20px'
+  }
+
 
   if(value.stat === 'about'){
 
@@ -217,23 +263,38 @@ function RightSection(props){
       <section className={className}>
         <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <section className='about-wrapper about-text-style'>
-          <AboutPlainText text={introduction_en}/>
-          <br/>
-          <AboutPlainText text={introduction_kr}/>
-          <br/>
-          <AboutPlainText text={'EDUCATION'}/>
+
+          <div style = {mediaWrapper}>
+            <img style={imageStyle} src={'about_img/profile.png'}/>
+             <a href={"downloadlink"} target='_blank' rel='noreferrer' className='link' ><b>CV</b></a> <br/>
+            <br/>
+            <AboutPlainText text={introduction_en}/>
+            <br/>
+            <AboutPlainText text={introduction_kr}/>
+            <br/>
+            
+
+          </div>
+
+         
+          <b>EDUCATION</b>
           <br/>
           <div>
-          B.S. KAIST, Mechanical Engineering , Industrial Design(Double Major)
+          B.S. KAIST, Mechanical Engineering , Industrial Design (Double Major)
           <br/>
           M.S. KAIST, Industrial Design, <a href={"https://reflect9.github.io/ael/"} target='_blank' rel='noreferrer' className='link' >{"AI & Experience Lab"}</a><br/>
 
           </div>
           <br/>
-          <AboutPlainText text={'CONTACT'}/>
+          <b>CONTACT</b>
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
+          <br/>
+          <div>
+           
+
+          </div>
         </section>
       </section>
     )
@@ -242,9 +303,8 @@ function RightSection(props){
       <section className={className}>
         <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <div className='media-wrapper'>
-          home
+          <img style={{width : '70%', marginTop: "10%", marginLeft:"20%"}} src={'about_img/profile2.png'}/>
         </div>
-      
       </section>
   )
   }else{
@@ -303,7 +363,10 @@ function MobileSection(props){
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
-
+          <br/>
+          <div>
+            CV <a href={"downloadlink"} target='_blank' rel='noreferrer' className='link' >{"(Download)"}</a><br/>
+          </div>
         </section>
       </section>
   )
