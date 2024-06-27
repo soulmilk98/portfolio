@@ -31,14 +31,14 @@
         ]
     },
     {
-        "title": "Unseen Forces: Social Dynamics in a Changing Force ",
+        "title": "Unseen Forces ",
         "status": "done",
         "year": 2023,
         "scope": "Media Art",
         "type" : "team(3 people)",
-        "mainDescriptionEN": "In this work, we speculated Anthropocene that humans continue to create, maintain, and destroy through social interaction, with a new perspective.",
+        "mainDescriptionEN": "Unseen Forces: Social Dynamics in a Changing Force  ",
         "mainDescriptionKR": "이 작품에서 우리는 인류세라는 개념에 대해 새로운 시선으로 인간이 사회적 상호작용을 통해 이 시대를 계속해서 만들고 유지하고 파괴하고 있다는 것을 표현했다.",
-        "subDescription": "",
+        "subDescription": "In this work, we speculated Anthropocene that humans continue to create, maintain, and destroy through social interaction, with a new perspective.",
         "link": [
             
         ],
@@ -63,7 +63,7 @@
         "status": "done",
         "year": 2022,
         "scope": "Media Art",
-        "type" : "team(2 people)",
+        "type" : "individual",
         "mainDescriptionEN": "Mistique Mirror: A mirror that morphs you into a different identity. ",
         "mainDescriptionKR": "",
         "subDescription": "Have you ever want to be a hero? Or a villian? Or just a someone else? Here's special mirror for you.",
@@ -83,6 +83,93 @@
         ],
         "pdf" : [
             "project_pdf/MistiqueMirror.pdf",
+            800
+        ]
+    },
+    {
+        "title": "Marble",
+        "status": "done",
+        "year": 2021,
+        "scope": "UI/UX",
+        "type" : "team(5 people)",
+        "mainDescriptionEN": "",
+        "mainDescriptionKR": "손 안에서 시작되는 색다른 주식 대화",
+        "subDescription": "현대 사회에서 우리는 정보의 홍수 속에 살고있습니다. 그리고 우리는 많은 정보들 중 우리의 개인 데이터를 기반으로 걸러진 정보만을 접하게 되죠. 언뜻 보면 우리 각자가 필요한 정보들을 제공해 주는 듯 보이지만, 자신과 다른 의견과 정보를 무시하고, 이는 확증편향으로 이어지게 됩니다. marble 은 우리와 다른 시각을 가진 사람을 만나게 하여, 좀 더 균형잡히고 객관적으로 정보를 받아드려 더 나은 투자를 할 수 있는 문화를 만들고자 하는 프로젝트 입니다.",
+        "link": [
+            
+        ],
+        "url": "/Marble",
+        "img": [
+           ""
+        ],
+        "vid": [
+            ""
+        ],
+        "youtube": [
+            "https://www.youtube.com/embed/N0h2RMHtmOo"
+            
+        ],
+        "pdf" : [
+            "project_pdf/Marble.pdf",
+            800
+        ]
+    },
+    {
+        "title": "Enchanticket",
+        "status": "done",
+        "year": 2019,
+        "scope": "Product Design/UX",
+        "type" : "team(3 people)",
+        "mainDescriptionEN": "",
+        "mainDescriptionKR": "티켓에 주문을 외우면, 그때의 모습이 떠오릅니다. 수리 수리 마수리~ 얍!",
+        "subDescription": "여행 중에는 기억하고 싶은 특별한 순간들이 가득합니다. 그리고 그 순간을 기억하기 위해 우리는 사진을 찍습니다. 기술의 발달로 사진을 찍는 것이 매우 쉽고 간단해지면서, 많은 기억들이 사진에 담깁니다. 그러나 디지털 사진을 어느때보다 많이 찍게된 것에 비해 기기에 저장된 사진을 다시 보는 행위는 그리 많이 일어나지 않습니다. EnchanTicket은 AR 기술을 활용하여 여행 중에 생긴 티켓, 영수증과 같은 종이 기념품과 그 순간의 사진을 연결함으로써 디지털 사진을 다시 보며 소중한 순간들을 다시 기억나게 합니다."
+        ,
+        "link": [
+            
+        ],
+        "url": "/Enchanticket",
+        "img": [
+           ""
+        ],
+        "vid": [
+            ""
+        ],
+        "youtube": [
+            "https://www.youtube.com/embed/gpSdbeyojvg"
+            
+        ],
+        "pdf" : [
+            "project_pdf/Enchanticket.pdf",
+            800
+        ]
+    },
+
+    {
+        "title": "Makerble",
+        "status": "done",
+        "year": 2020,
+        "scope": "Branding/Engineering",
+        "type" : "team(Leader)",
+        "mainDescriptionEN": "",
+        "mainDescriptionKR": "“나는 이런 것도 만들어서 써!”",
+        "subDescription": "Makerble은 아이들에게 성공하는 경험을 주는 과학, 공학 키트 구독 서비스입니다. Makerble은 학생들이 과학 공학을 무겁고 진지한 학문이 아니라 즐겁게 경험할 수 있는 취미 분야라고 생각하기를 바랍니다. 또, 학생들이 한 줄서기 형태의 평가 문화에서 벗어나 자신의 창작물을 자신의 적성과 창의력을 활용해 공유하고 발전해 나가기를 원합니다. "
+        ,
+        "link": [
+            
+        ],
+        "url": "/Makerble",
+        "img": [
+           ""
+        ],
+        "vid": [
+            ""
+        ],
+        "youtube": [
+            ""
+            
+        ],
+        "pdf" : [
+            "project_pdf/makerble.pdf",
             800
         ]
     }

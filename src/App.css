@@ -1,4 +1,3 @@
-
 body{
   font-family: "neue-haas-unica", sans-serif;
 }
@@ -207,6 +206,6 @@ body{
   height: 44px;
   border: 0;
   font: inherit;
-  font-size: .8em;
+  font-size: 1em;
   border-radius: var(--rounded-corners);
 }

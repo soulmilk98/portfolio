@@ -50,7 +50,37 @@ function ProjectPDF(props) {
         paddingBottom : '20px',
         background : "#eee"
     }
-    
+    const buttonStyle = {
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        color: 'white',
+        border: 'none',
+        borderRadius: '50%',
+        width: '40px',
+        height: '40px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        opacity: 0,
+        transition: 'opacity 0.3s'
+    };
+
+    const buttonContainerStyle = {
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '100%'
+    };
+
+    const showButton = {
+        opacity: 1
+    };
+
     
     if(currentProject.pdf[0] === ""){
         return(<div></div>)
@@ -69,6 +99,24 @@ function ProjectPDF(props) {
                             width={540}
                             pageNumber={pageNumber} />
                     </Document>
+                </div>
+                <div style={buttonContainerStyle}>
+                    <button
+                        type="button"
+                        onClick={previousPage}
+                        style={{ ...buttonStyle, left: '10px' }}
+                        className="hover-button"
+                    >
+                        {"<"}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={nextPage}
+                        style={{ ...buttonStyle, right: '10px' }}
+                        className="hover-button"
+                    >
+                        {">"}
+                    </button>
                 </div>
                 <div className='page-controls'>
                     <button
