@@ -103,7 +103,7 @@ function ProjectPDF(props) {
                     </Document> */}
                 </div>
                 
-                <div className='page-controls'>
+                {/* <div className='page-controls'>
                     <button
                         type="button"
                         disabled={pageNumber <= 1}
@@ -119,7 +119,7 @@ function ProjectPDF(props) {
                         >
                         {">"}
                     </button>
-                </div>   
+                </div>    */}
             </div>
             <p style={{ textAlign: "center", marginTop: '0px' }}>
               <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}.pdf?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>
