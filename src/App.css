@@ -198,12 +198,9 @@ body{
 }
 
 .page-controls {
-  position: relative;
-  bottom: 0%;
-  left: 10%;
+
   background: transparent;
   opacity: 0.5;
-  transform: translate(-50%);
   transition: opacity ease-in-out .2s;
   box-shadow: var(--shadow);
   border-radius: var(--rounded-corners);
