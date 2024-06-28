@@ -65,7 +65,7 @@ function ProjectPDF(props) {
               
                 <div>
                     
-                    <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}?raw=true`}
+                    <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onSourceSuccess={() => { setPageNumber(1) }}
                         options={{
@@ -97,7 +97,7 @@ function ProjectPDF(props) {
                 </div>   
             </div>
             <p style={{ textAlign: "center", marginTop: '0px' }}>
-              <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>
+              <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>
             </p>
           </>
         );
