@@ -68,6 +68,7 @@ function ProjectPDF(props) {
                     <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onSourceSuccess={() => { setPageNumber(1) }}
+                        onError={(error) => { console.error('Error while loading document', error); }}
                         options={{
                             cMapUrl: '/cmaps/',
                             standardFontDataUrl: '/standard_fonts/',
