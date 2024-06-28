@@ -59,7 +59,7 @@ function ProjectPDF(props) {
 
     if (props.mobile === 'true') {
         imageStyle = {
-            width: '350px',
+            width: '90%',
             height: 'auto',
             marginTop: '20px'
         };
@@ -192,7 +192,10 @@ function Youtube(props) {
     let youtubeStyle = {
         marginTop: '10px'
     };
-
+    const youtubeWidth = 350;
+    if (props.mobile){
+      youtubeWidth=550;
+    }
     if (currentProject.youtube[0] === "") {
         return (<div></div>);
     } else {
@@ -204,7 +207,7 @@ function Youtube(props) {
                     <iframe
                     key={index}
                     style={youtubeStyle}
-                    width="550"
+                    width={youtubeWidth}
                     height="315"
                     src={vid}
                     title="YouTube video player"
