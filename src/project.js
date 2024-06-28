@@ -45,15 +45,14 @@ function ProjectPDF(props) {
     }
 
     let mediaWrapper = {
-        height: currentProject.pdf[1],
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        background: "#eee"
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: '20px',
+      paddingBottom: '20px',
+      background: "#eee"
     };
 
     let imageStyle = {};
@@ -77,9 +76,9 @@ function ProjectPDF(props) {
     } else {
         return (
           <>
-            <div style={mediaWrapper}>
+            <div >
               
-                <div>
+                <div style={mediaWrapper}>
                     {
                       Array.from({length: currentProject.pdf[1]}, (_, index)=>{
                         return(
