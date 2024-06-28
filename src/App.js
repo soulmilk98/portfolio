@@ -140,10 +140,27 @@ function ProjectWrapper(props){
               <td>{project.year}</td>
             </tr>
           }else if(project.status === "mus"){
-            <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
-              <td>{}</td>
-              <td>{}</td>
-            </tr>
+            // 구분선
+            return(
+              <>
+                <tr className='project-single-element no-grab'>
+                  <td height={"15px"} ></td>
+                </tr>
+
+                <tr className='project-single-element music no-grab'>
+              
+                  <td  valign={"bottom"} align={"center"} colSpan={2}>
+                    
+                    <a
+                      style={{textAlign:"justify", width:"100%",fontWeight: "bold", fontStyle: "italic"}} >
+                      {"Music Project"}
+                    </a>
+                    
+                  </td>
+                  
+                </tr>
+              </>
+              )
           }
           else{
             return(
