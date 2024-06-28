@@ -251,7 +251,7 @@ function LeftSection(props){
 
   return(
     <section className={className} style={leftStyle}>
-      <header className='header'><Link to={'/'} className='header-button' onClick={()=>{value.setStat('home')}}> 윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link></header>
+      <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}> 윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link></header>
       <ProjectWrapper mobile = {props.mobile} projectTitle='(WORKS)' projectSetter = {setProject}/>
       <footer className='footer'><a href='mailto:imflatfish01@gmail.com'> {"imflatfish01@gmail.com".toUpperCase()} </a></footer>
     </section>
@@ -305,7 +305,7 @@ function RightSection(props){
 
     return(
       <section className={className}>
-        <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <section className='about-wrapper about-text-style'>
 
           <div style = {mediaWrapper}>
@@ -345,7 +345,7 @@ function RightSection(props){
   }else if(value.stat === 'home'){
     return(
       <section className={className}>
-        <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <div className='media-wrapper'>
           <img style={{width : '70%', marginTop: "10%", marginLeft:"20%"}} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile2.png?raw=true'}/>
         </div>
@@ -353,7 +353,7 @@ function RightSection(props){
   )}else if (value.stat === 'project' && value.selectedProject) {
     return (
       <section className={className}>
-        <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectInfo project={value.selectedProject} />
       </section>
     );
@@ -383,14 +383,14 @@ function MobileSection(props){
   if(value.stat === 'home'){
     return(
       <section className={className}>
-        <header className='header'><Link to={'/'} className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectWrapper mobile = {props.mobile} projectTitle='(Works)' projectSetter = {setProject}/>
       </section>
   )
   }else if(value.stat === 'about'){
     return(
       <section className={className}>
-        <header className='header'><Link to={'/'} className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <section className='about-wrapper about-text-style'>
         <AboutPlainText text={introduction_en}/>
           <br/>
@@ -419,7 +419,7 @@ function MobileSection(props){
   }else{
     return(
       <section className={className}>
-        <header className='header'><Link to={'/'} className='header-button' onClick={()=>{value.setStat('home')}}>&#40;WORKS&#41;</Link><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>&#40;WORKS&#41;</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectInfo mobile = {props.mobile} project = {value.stat}/>
       </section>
     )

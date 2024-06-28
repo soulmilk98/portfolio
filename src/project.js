@@ -65,7 +65,7 @@ function ProjectPDF(props) {
               
                 <div>
                     
-                    <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
+                    <Document file={`compressed/${currentProject.pdf[0]}`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onSourceSuccess={() => { setPageNumber(1) }}
                         options={{
