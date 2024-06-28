@@ -83,7 +83,7 @@ function ProjectPDF(props) {
                     {
                       Array.from({length: currentProject.pdf[1]}, (_, index)=>{
                         return(
-                          <img className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.pdf[0]}-${index}.png?raw=true`} />
+                          <img className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.url}-${index}.png?raw=true`} />
                         )
                         })
                       
