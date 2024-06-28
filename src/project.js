@@ -88,7 +88,7 @@ function ProjectPDF(props) {
                         })
                       
                     }
-                    <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
+                    {/* <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onSourceSuccess={() => { setPageNumber(1) }}
                         onError={(error) => { console.error('Error while loading document', error); }}
@@ -100,7 +100,7 @@ function ProjectPDF(props) {
                         <Page 
                             width={540}
                             pageNumber={pageNumber} />
-                    </Document>
+                    </Document> */}
                 </div>
                 
                 <div className='page-controls'>
