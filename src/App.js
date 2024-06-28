@@ -383,14 +383,14 @@ function MobileSection(props){
   if(value.stat === 'home'){
     return(
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectWrapper mobile = {props.mobile} projectTitle='(Works)' projectSetter = {setProject}/>
       </section>
   )
   }else if(value.stat === 'about'){
     return(
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) / 넙치 (NUPCHI) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <section className='about-wrapper about-text-style'>
         <AboutPlainText text={introduction_en}/>
           <br/>
@@ -416,13 +416,16 @@ function MobileSection(props){
         </section>
       </section>
   )
-  }else{
-    return(
+  }else if (value.stat === 'project' && value.selectedProject) {
+    return (
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>&#40;WORKS&#41;</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
-        <ProjectInfo mobile = {props.mobile} project = {value.stat}/>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG)</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <ProjectInfo mobile = {props.mobile} project={value.selectedProject} />
       </section>
-    )
+    );
+  } else {
+    return null; // Handle other cases or render nothing if state is undefined
+  
   }
   
 }
