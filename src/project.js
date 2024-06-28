@@ -56,6 +56,22 @@ function ProjectPDF(props) {
         background: "#eee"
     };
 
+    let imageStyle = {};
+
+    if (props.mobile === 'true') {
+        imageStyle = {
+            width: '350px',
+            height: 'auto',
+            marginTop: '20px'
+        };
+    } else {
+        imageStyle = {
+            width: '500px',
+            height: 'auto',
+            marginTop: '20px'
+        };
+    }
+
     if (currentProject.pdf[0] === "") {
         return (<div></div>);
     } else {
@@ -64,11 +80,19 @@ function ProjectPDF(props) {
             <div style={mediaWrapper}>
               
                 <div>
-                    
+                    {
+                      Array.from({length: currentProject.pdf[1]}, (_, index)=>{
+                        return(
+                          <img className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.pdf[0]}-${index}?raw=true`} />
+                        )
+                        })
+                      
+                    }
                     <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onSourceSuccess={() => { setPageNumber(1) }}
                         onError={(error) => { console.error('Error while loading document', error); }}
+
                         options={{
                             cMapUrl: '/cmaps/',
                             standardFontDataUrl: '/standard_fonts/',
@@ -98,7 +122,7 @@ function ProjectPDF(props) {
                 </div>   
             </div>
             <p style={{ textAlign: "center", marginTop: '0px' }}>
-              <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>
+              <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}.pdf?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>
             </p>
           </>
         );
