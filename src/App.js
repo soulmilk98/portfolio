@@ -135,10 +135,13 @@ function ProjectWrapper(props){
             </tr>
           )
           }else if(project.status === "music"){
-            <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
-              <td>{project.title}</td>
-              <td>{project.year}</td>
-            </tr>
+            return(
+              <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
+                <td>{project.title}</td>
+                <td>{project.year}</td>
+              </tr>
+            )
+            
           }else if(project.status === "mus"){
             // 구분선
             return(
