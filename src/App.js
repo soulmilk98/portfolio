@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
 import {useMediaQuery} from 'react-responsive';
+import {app, database, storage} from './FirebasePortfolio.js'
+import { ref, onValue } from 'firebase/database';
 
-import projectsdat from './projects_data.json'
+// import projectsdat from './projects_data.json'
 import ProjectInfo from './project';
 import './App.css';
 import AboutLink from './components/AboutLink';
@@ -25,11 +27,12 @@ const PC = ({children}) => {
   return <>{isPc && children}</>
 }
 
-let projects = projectsdat.data;
 
 let StateContext = createContext({
-  stat:'home', 
-  setStat:()=>{}
+  stat: 'home',
+  selectedProject: null,
+  setStat: () => {},
+  setSelectedProject: () => {}
 });
 
 function ProjectWrapper(props){
@@ -40,15 +43,22 @@ function ProjectWrapper(props){
   }
   const navigate = useNavigate();
 
-  let value = useContext(StateContext)
+  const { setStat, setSelectedProject } = useContext(StateContext);
 
   const [sortState, setSort] = useState('year');
+  const [projects, setProjects] = useState([]);
 
+  useEffect(() => {
+    const dbRef = ref(database, '/data');
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      setProjects(data ? Object.values(data) : []);
+    });
+  }, []);
 
-  const goToProject = (i) => {
-    let project = projects[i];
-    value.setStat(i);
-    navigate(project.url);
+  const goToProject = (project) => {
+    setStat('project');
+    setSelectedProject(project);
   };
 
 
@@ -125,19 +135,19 @@ function ProjectWrapper(props){
             </tr>
           )
           }else if(project.status === "music"){
-            <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+            <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
               <td>{project.title}</td>
               <td>{project.year}</td>
             </tr>
           }else if(project.status === "mus"){
-            <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+            <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
               <td>{}</td>
               <td>{}</td>
             </tr>
           }
           else{
             return(
-            <tr className='project-single-element' onClick={()=>{goToProject(index)}}>
+            <tr className='project-single-element' onClick={()=>{goToProject(project)}}>
               <td>{project.title}</td>
               <td>{project.year}</td>
             </tr>
@@ -172,7 +182,7 @@ function ProjectWrapper(props){
             )
             }else if (project.status === 'music'){
               return(
-              <tr className='project-single-element music' onClick={()=>{goToProject(index)}}>
+              <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
                 <td>{project.title}</td>
                 <td>{project.scope}</td>
                 <td>{project.type}</td>
@@ -204,7 +214,7 @@ function ProjectWrapper(props){
             }
             else{
               return(
-              <tr className='project-single-element' onClick={()=>{goToProject(index)}}>
+              <tr className='project-single-element' onClick={()=>{goToProject(project)}}>
                 <td>{project.title}</td>
                 <td>{project.scope}</td>
                 <td>{project.type}</td>
@@ -254,7 +264,7 @@ function RightSection(props){
 
   let className = 'section-style';
 
-  let value = useContext(StateContext)
+  const value= useContext(StateContext);
 
   if(props.mobile === 'true'){
     className = 'section-style-mo'
@@ -299,7 +309,7 @@ function RightSection(props){
         <section className='about-wrapper about-text-style'>
 
           <div style = {mediaWrapper}>
-            <img style={imageStyle} src={'about_img/profile.png'}/>
+            <img style={imageStyle} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile.png?raw=true'}/>
              <a href={"downloadlink"} target='_blank' rel='noreferrer' className='link' ><b>CV</b></a> <br/>
             <br/>
             <AboutPlainText text={introduction_en}/>
@@ -337,17 +347,19 @@ function RightSection(props){
       <section className={className}>
         <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <div className='media-wrapper'>
-          <img style={{width : '70%', marginTop: "10%", marginLeft:"20%"}} src={'about_img/profile2.png'}/>
+          <img style={{width : '70%', marginTop: "10%", marginLeft:"20%"}} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile2.png?raw=true'}/>
         </div>
       </section>
-  )
-  }else{
-    return(
+  )}else if (value.stat === 'project' && value.selectedProject) {
+    return (
       <section className={className}>
         <header className='header'><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
-        <ProjectInfo projectIndex = {value.stat}/>
+        <ProjectInfo project={value.selectedProject} />
       </section>
-  )
+    );
+  } else {
+    return null; // Handle other cases or render nothing if state is undefined
+  
   }
 
 }
@@ -408,20 +420,21 @@ function MobileSection(props){
     return(
       <section className={className}>
         <header className='header'><Link to={'/'} className='header-button' onClick={()=>{value.setStat('home')}}>&#40;WORKS&#41;</Link><Link to={'/About'} className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
-        <ProjectInfo mobile = {props.mobile} projectIndex = {value.stat}/>
+        <ProjectInfo mobile = {props.mobile} project = {value.stat}/>
       </section>
     )
   }
   
 }
 
-
 function App() {
   let [stat, setStat] = useState('home')
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const { pathParam } = useParams();
   console.log(pathParam)
   return (
-    <StateContext.Provider value={{stat:stat, setStat:setStat}}>
+    <StateContext.Provider value={{stat:stat, setStat:setStat, selectedProject, setSelectedProject}}>
       <BrowserRouter>
         <PC>
           <div className="App">
