@@ -330,7 +330,7 @@ function RightSection(props){
 
           <div style = {mediaWrapper}>
             <img style={imageStyle} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile.png?raw=true'}/>
-             <a href={"downloadlink"} target='_blank' rel='noreferrer' className='link' ><b>CV</b></a> <br/>
+             <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' ><b>CV</b></a> <br/>
             <br/>
             <AboutPlainText text={introduction_en}/>
             <br/>
@@ -353,7 +353,9 @@ function RightSection(props){
           <b>CONTACT</b>
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
+          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
+          <AboutLink href = {'https://www.youtube.com/@iamflatfish'} text = {'Youtube. @넙치(Music)'}/>
           <br/>
           <div>
            
@@ -428,10 +430,12 @@ function MobileSection(props){
           <AboutPlainText text={'CONTACT'}/>
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
+          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
+          <AboutLink href = {'https://www.youtube.com/@iamflatfish'} text = {'Youtube. @넙치(Music)'}/>
           <br/>
           <div>
-            CV <a href={"downloadlink"} target='_blank' rel='noreferrer' className='link' >{"(Download)"}</a><br/>
+            CV <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' >{"(Download)"}</a><br/>
           </div>
         </section>
       </section>
