@@ -207,7 +207,7 @@
             "title": "RAPID",
             "status": "done",
             "year": 2023,
-            "scope": "LLM",
+            "scope": "LLM-HCI",
             "type" : "team(Developer)",
             "mainDescriptionEN": "Designing Prompt Analytics Dashboards to Analyze Student-ChatGPT Interactions in EFL Writing",
             "mainDescriptionKR": "ChatGPT를 교육 환경에 통합하면서 발생할 수 있는 위험 요소를 해결하기 위해, 6명의 EFL(외국인을 위한 영어 교육)교사를 대상으로 한 'Prompt Analytics Dashboard (PAD)' 프로토타입 RAPID를 개발했습니다. 대시보드에서는 학생과 ChatGPT 간의 채팅 기록과 에세이 편집 기록을 시각화해, 교사들이 학생 행동을 분석하고, 학습 과정을 설계하며, 교수 기술을 개발하는 데 도움을 줍니다.",
@@ -402,6 +402,37 @@
             ],
             "youtube": [
                 ""
+                
+            ],
+            "pdf" : [
+                ""
+            ]
+        },{
+            "title": "Blame-O-Matic",
+            "status": "done",
+            "year": 2023,
+            "scope": "LLM-HCI",
+            "type" : "team(Engineer)",
+            "mainDescriptionEN": "전자 음악 합주를 위한 디지털 악기 및 몰입 공간 디자인",
+            "mainDescriptionKR": "본 연구는 인터랙티브 장치 \"블레임-오-매틱\"의 디자인을 통해 폭력적인 충동 해소를 위한 생성형 AI의 활용 가능성을 탐구한다. 블레임-오-매틱은 최소한의 단어를 입력받는 것만으로 해당 대상이 해를 입을 수 있는 가상의 시나리오를 생성하여 부정적인 생각에 대한 대리 만족을 제공한다. 본 연구에서는 인터뷰와 아이디어 도출을 비롯한 탐색적인 사용자 연구를 통해 참가자들의 반응과 장치에 대한 인식을 관찰하였으며, 부정적인 생각과 관련하여 생성형 AI를 사용하는 데 필요한 현장 지식을 수집하였다. 본 연구는 과장된 풍자와 냉소를 사용하는 블레임-오-매틱의 디자인이 사용자들이 자신의 부정적인 생각을 어떻게 해소하고, 그러한 감정의 중요성을 새롭게 발견하도록 도왔는지 보고한다. 본 연구는 생성형 AI를 이용해 불편한 감정을 다루더라도 사용자들에게 환영받을 수 있으며, 의미 있는 경험을 안정적으로 제공할 수 있음을 시사한다.",
+            "subDescription": "This study explores the use of generative AIs to release violent urges through the design of an interactive artifact, the Blame-O-Matic. The device accepts few words of input and generates fictional scenarios in which a target could be harmed, providing vicarious satisfaction for negative emotions. Through an exploratory user study involving open-ended interviews and ideation, we observed participants' reactions and perceptions of the device and gathered situated knowledge for using generative AIs to address the negative thoughts. The study reports how the blame-o-matic, which employs exaggerated sarcasm and cynicism, helps users release their negative thoughts and further discover the significance of these emotions in their lives. Our study suggests that generative AIs can address uncomfortable emotions in ways that users find both welcoming and meaningful.",
+            "link": [
+                "https://library.kaist.ac.kr/search/detail/view.do?bibCtrlNo=1096671&flag=dissertation",
+                "논문 원본"
+            ],
+            "url": "/BlameOMatic",
+            "img": [
+                "project_img/BlameOMatic1.png",
+                "project_img/BlameOMatic2.png",
+                "project_img/BlameOMatic3.png",
+                "project_img/BlameOMatic4.png"
+            ],
+            "vid": [
+                ""
+            ],
+            "youtube": [
+              
+                 "https://www.youtube.com/embed/IyjvNkQkQ9I"
                 
             ],
             "pdf" : [

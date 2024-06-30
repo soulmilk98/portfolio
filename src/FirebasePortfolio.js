@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
-import { getDatabase } from "firebase/database";
+import { getDatabase, ref, set } from "firebase/database";
 
-// import projectsdat from './projects_data.json'
+import projectsdat from './projects_data.json'
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,6 +26,23 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const storage = getStorage(app);
 
+// Function to upload JSON data to Firebase Realtime Database
+function uploadJsonToFirebase(jsonData) {
+  // Create a reference to the database
+  const dbRef = ref(database, '/'); // Specify the path where you want to upload the data
+
+  // Upload the JSON data
+  set(dbRef, jsonData)
+    .then(() => {
+      console.log("Data successfully uploaded to Firebase Realtime Database");
+    })
+    .catch((error) => {
+      console.error("Error uploading data to Firebase Realtime Database: ", error);
+    });
+}
+
+// Call the function to upload the data
+uploadJsonToFirebase(projectsdat);
 
 
 
