@@ -222,7 +222,7 @@ function ProjectWrapper(props){
                 <tr className='project-single-element no-grab'>
                   <td height={"15px"} ></td>
                 </tr>
-                
+
                 <tr className='project-single-element music no-grab'>
                   <td  valign={"bottom"} align={"center"} colSpan={4}>
                     <a
@@ -377,7 +377,7 @@ function RightSection(props){
   } else if (value.stat === 'project' && value.selectedProject) {
     return (
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG)</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>{value.selectedProject.scopeSort}</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectInfo mobile = {props.mobile} project={value.selectedProject} />
       </section>
     );
