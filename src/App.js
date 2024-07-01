@@ -83,8 +83,8 @@ function ProjectWrapper(props){
   
   const sortScope = (i) => {
     projects.sort((a, b) => i === 0 
-      ? b.scope.localeCompare(a.scope) 
-      : a.scope.localeCompare(b.scope)).sort((a, b) => a.status.localeCompare(b.status));
+      ? b.scopeSort.localeCompare(a.scopeSort) 
+      : a.scopeSort.localeCompare(b.scopeSort)).sort((a, b) => a.status.localeCompare(b.status));
   };
   
   
@@ -96,6 +96,7 @@ function ProjectWrapper(props){
       sortName(0);
       break;
     case 'scope' :
+      console.log(123)
       sortScope(0);
       break;
     case'type1' :
@@ -108,6 +109,7 @@ function ProjectWrapper(props){
       sortYear(1);
       break;
     case 'scope1' :
+      console.log(345)
       sortScope(1);
       break;
     default :
@@ -184,8 +186,8 @@ function ProjectWrapper(props){
         <h1 style={titleStyle}>{props.projectTitle}</h1>
         <table className='project-table'>
         <th align='start' onClick={() => sortState === 'name' ? setSort('name1') : setSort('name')}>NAME</th>
-        <th align='start' onClick={() => sortState === 'year' ? setSort('scope1') : setSort('scope')}>Scope</th>
-        <th align='start' onClick={() => sortState === 'type' ? setSort('type1') : setSort('type')}>PROJECT TYPE</th>
+        <th align='start' onClick={() => sortState === 'scope' ? setSort('scope1') : setSort('scope')}>SCOPE</th>
+        <th align='start' onClick={() => sortState === 'type' ? setSort('type1') : setSort('type')}>WORKING TYPE</th>
         <th align='start' onClick={() => sortState === 'year' ? setSort('year1') : setSort('year')}>YEAR</th>
         
 
@@ -195,7 +197,7 @@ function ProjectWrapper(props){
               return(
               <tr className='project-single-element no-grab' onClick={()=>{alert('This project is in progress!')}}>
                 <td>{project.title} <i>&#40;work in progress&#41;</i></td>
-                <td>{project.scope}</td>
+                <td>{project.scopeSort&&project.scopeSort}{!project.scopeSort&&project.scope}</td>
                 <td>{project.type}</td>
                 <td>{project.year}</td>
               </tr>
@@ -204,7 +206,7 @@ function ProjectWrapper(props){
               return(
               <tr className='project-single-element music' onClick={()=>{goToProject(project)}}>
                 <td>{project.title}</td>
-                <td>{project.scope}</td>
+                <td>{project.scopeSort&&project.scopeSort}{!project.scopeSort&&project.scope}</td>
                 <td>{project.type}</td>
                 <td>{project.year}</td>
               </tr>
@@ -236,7 +238,7 @@ function ProjectWrapper(props){
               return(
               <tr className='project-single-element' onClick={()=>{goToProject(project)}}>
                 <td>{project.title}</td>
-                <td>{project.scope}</td>
+                <td>{project.scopeSort&&project.scopeSort}{!project.scopeSort&&project.scope}</td>
                 <td>{project.type}</td>
                 <td>{project.year}</td>
               </tr>
@@ -321,7 +323,7 @@ function RightSection(props){
   }
 
 
-  if(value.stat === 'about'){
+  if(value.stat === 'about' || value.stat ==='home'){
 
     return(
       <section className={className}>
@@ -330,17 +332,22 @@ function RightSection(props){
 
           <div style = {mediaWrapper}>
             <img style={imageStyle} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile.png?raw=true'}/>
-             <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' ><b>CV</b></a> <br/>
+            <br/>
+            <div>
+              CV <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' >{"(notion)"}</a><br/>
+            </div>
             <br/>
             <AboutPlainText text={introduction_en}/>
             <br/>
             <AboutPlainText text={introduction_kr}/>
             <br/>
             
+            
 
           </div>
 
-         
+          
+          <br/>
           <b>EDUCATION</b>
           <br/>
           <div>
@@ -352,11 +359,14 @@ function RightSection(props){
           <br/>
           <b>CONTACT</b>
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
+          <br/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
-          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
+          <br/>
+          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.youtube.com/@iamflatfish'} text = {'Youtube. @넙치(Music)'}/>
           <br/>
+          
           <div>
            
 
@@ -364,19 +374,11 @@ function RightSection(props){
         </section>
       </section>
     )
-  }else if(value.stat === 'home'){
-    return(
-      <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
-        <div className='media-wrapper'>
-          <img style={{width : '70%', marginTop: "10%", marginLeft:"20%"}} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile2.png?raw=true'}/>
-        </div>
-      </section>
-  )}else if (value.stat === 'project' && value.selectedProject) {
+  } else if (value.stat === 'project' && value.selectedProject) {
     return (
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
-        <ProjectInfo project={value.selectedProject} />
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG)</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <ProjectInfo mobile = {props.mobile} project={value.selectedProject} />
       </section>
     );
   } else {
@@ -414,11 +416,15 @@ function MobileSection(props){
       <section className={className}>
         <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>윤유상 (YOON YOOSANG) </Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <section className='about-wrapper about-text-style'>
-        <AboutPlainText text={introduction_en}/>
+          <img style={imageStyle} src={'https://github.com/soulmilk98/portfolio/blob/main/build/about_img/profile.png?raw=true'}/>
+          <br/>
+          <AboutPlainText text={introduction_en}/>
           <br/>
           <AboutPlainText text={introduction_kr}/>
           <br/>
 
+          
+          <br/>
           <AboutPlainText text={'EDUCATION'}/>
           <div>
           B.S. KAIST, Mechanical Engineering , Industrial Design(Double Major)
@@ -429,13 +435,15 @@ function MobileSection(props){
           <br/>
           <AboutPlainText text={'CONTACT'}/>
           <AboutLink href = {'mailto:imflatfish01@gmail.com'} text = {"imflatfish01@gmail.com".toUpperCase()}/>
+          <br/>
           <AboutLink href = {'https://www.instagram.com/hogam_im_/'} text = {'IG. @윤유상'}/>
-          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.instagram.com/flatfish01/'} text = {'IG. @넙치'}/>
+          <br/>
+          <AboutLink href = {'https://www.youtube.com/@hogam_im_'} text = {'Youtube. @윤유상(Project)'}/>
           <AboutLink href = {'https://www.youtube.com/@iamflatfish'} text = {'Youtube. @넙치(Music)'}/>
           <br/>
           <div>
-            CV <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' >{"(Download)"}</a><br/>
+            CV <a href={"https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"} target='_blank' rel='noreferrer' className='link' >{"(notion)"}</a><br/>
           </div>
         </section>
       </section>
@@ -466,7 +474,7 @@ function App() {
         <PC>
           <div className="App">
             <main className='main-section'>
-              <LeftSection/>
+              <LeftSection />
               <RightSection/>
             </main>
           </div>

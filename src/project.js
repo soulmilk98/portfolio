@@ -82,43 +82,13 @@ function ProjectPDF(props) {
                     {
                       Array.from({length: currentProject.pdf[1]}, (_, index)=>{
                         return(
-                          <img className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.url}-${index+1}.png?raw=true`} />
+                          <img loading="lazy" className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.url}-${index+1}.png?raw=true`} />
                         )
                         })
                       
                     }
-                    {/* <Document file={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}?raw=true`}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        onSourceSuccess={() => { setPageNumber(1) }}
-                        onError={(error) => { console.error('Error while loading document', error); }}
-
-                        options={{
-                            cMapUrl: '/cmaps/',
-                            standardFontDataUrl: '/standard_fonts/',
-                        }}>
-                        <Page 
-                            width={540}
-                            pageNumber={pageNumber} />
-                    </Document> */}
                 </div>
-                
-                {/* <div className='page-controls'>
-                    <button
-                        type="button"
-                        disabled={pageNumber <= 1}
-                        onClick={previousPage}
-                        >
-                        {"<"}
-                    </button>
-                    <span> {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'} </span>
-                    <button
-                        type="button"
-                        disabled={pageNumber >= numPages}
-                        onClick={nextPage}
-                        >
-                        {">"}
-                    </button>
-                </div>    */}
+            
             </div>
             <p style={{ textAlign: "center", marginTop: '0px' }}>
               <a href={`https://github.com/soulmilk98/portfolio/blob/main/build/${currentProject.pdf[0]}.pdf?raw=true`} target='_blank' rel='noreferrer' className='link'>{"PDF Download Link"}</a>

@@ -5,6 +5,7 @@
             "status": "done",
             "year": 2024,
             "scope": "AI-Music (M.S.)",
+            "scopeSort" : "Research",
             "type" : "individual",
             "mainDescriptionEN": "전자 음악 합주를 위한 디지털 악기 및 몰입 공간 디자인",
             "mainDescriptionKR": "본 연구는 일반 대중이 쉽게 접근하고 몰입할 수 있는 전자 음악 앙상블 경험을 제공하는 새로운 형태의 인터랙티브 공간을 설계하고 구현하는 것을 목표로 한다. 이를 위해 본 연구는 사운드 디자인을 진행하고, 파일럿 테스트를 통해 피드백을 수집하였다. 이후 수집된 피드백을 바탕으로 악기 디자인과 공간 디자인을 완성하였다. 이후 평가 과정에서는 전문가와 일반 대중을 대상으로 실험을 진행하였으며, 전문가 평가에서는 악보 분석과 작곡 방식에 초점을 맞추어 시스템의 음악적 표현력과 인터랙티브 요소의 효과를 검증하였다. 일반 대중 평가에서는 시스템의 사용성, 몰입감, 창의적 표현 가능성 및 협업에 미치는 영향을 평가하였다. 인터뷰 데이터는 어피니티 다이어그램을 통해 분석하여 주요 테마를 도출하였다. 본 연구에서 고안된 악기와 공간은 전문가와 일반 대중 모두에게 창의적이고 몰입적인 음악적 경험을 제공하는 데 유효한 도구임이 확인되었다. 그러나 기술적 한계와 사용자 인터페이스 개선의 필요성도 드러났다. 본 연구는 새로운 디지털 악기의 잠재력과 사용성에 대한 초기 평가를 제공하며, 향후 더욱 발전된 디지털 악기를 개발하여 음악적 창의성을 증진시키는 데 기여할 수 있을 것으로 기대된다.",
@@ -27,7 +28,7 @@
             ],
             "pdf" : [
                 "project_pdf/Cube",
-                31
+                20
             ]
         },
         {
@@ -35,6 +36,7 @@
             "status": "done",
             "year": 2023,
             "scope": "Media Art",
+            "scopeSort" : "Art",
             "type" : "team(3 people)",
             "mainDescriptionEN": "Unseen Forces: Social Dynamics in a Changing Force  ",
             "mainDescriptionKR": "이 작품에서 우리는 인류세라는 개념에 대해 새로운 시선으로 인간이 사회적 상호작용을 통해 이 시대를 계속해서 만들고 유지하고 파괴하고 있다는 것을 표현했다.",
@@ -63,6 +65,7 @@
             "status": "done",
             "year": 2022,
             "scope": "Media Art (Product)",
+            "scopeSort" : "Art",
             "type" : "team(2 people)",
             "mainDescriptionEN": "Mistique Mirror: A mirror that morphs you into a different identity. ",
             "mainDescriptionKR": "",
@@ -91,6 +94,7 @@
             "status": "done",
             "year": 2021,
             "scope": "Product Design",
+            "scopeSort" : "Product",
             "type" : "individual",
             "mainDescriptionEN": "Signal = Fire = Oddly Satisfying = 멍~ 때리기",
             "mainDescriptionKR": "지금 우리는 신호가 보이지 않는 시대에 살고 있습니다. 와이파이, 블루투스들은 과거의 봉화(烽火)와 달리 보이지 않고, 심지어 0과 1로 이루어진 나열을 주고 받습니다. 정보는 빠르고 간편하게 전달되지만, 보통 사람들이 이를 응용해서 무언가를 하기에는 어렵습니다. 왜냐하면 그들에게 이런 현대기술은 버튼 몇 개로 원하는 것을 얻을 수 있는 마법 상자이기 때문입니다.",
@@ -120,6 +124,7 @@
             "status": "done",
             "year": 2021,
             "scope": "UI/UX",
+            "scopeSort" : "UI/UX",
             "type" : "team(5 people)",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "손 안에서 시작되는 색다른 주식 대화",
@@ -148,6 +153,7 @@
             "status": "done",
             "year": 2020,
             "scope": "Engineering/Branding",
+            "scopeSort": "Branding",
             "type" : "team(Leader)",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "“나는 이런 것도 만들어서 써!”",
@@ -174,40 +180,11 @@
         }
         ,
         {
-            "title": "Enchanticket",
-            "status": "done",
-            "year": 2019,
-            "scope": "Product Design/UX",
-            "type" : "team(3 people)",
-            "mainDescriptionEN": "",
-            "mainDescriptionKR": "티켓에 주문을 외우면, 그때의 모습이 떠오릅니다. 수리 수리 마수리~ 얍!",
-            "subDescription": "여행 중에는 기억하고 싶은 특별한 순간들이 가득합니다. 그리고 그 순간을 기억하기 위해 우리는 사진을 찍습니다. 기술의 발달로 사진을 찍는 것이 매우 쉽고 간단해지면서, 많은 기억들이 사진에 담깁니다. 그러나 디지털 사진을 어느때보다 많이 찍게된 것에 비해 기기에 저장된 사진을 다시 보는 행위는 그리 많이 일어나지 않습니다. EnchanTicket은 AR 기술을 활용하여 여행 중에 생긴 티켓, 영수증과 같은 종이 기념품과 그 순간의 사진을 연결함으로써 디지털 사진을 다시 보며 소중한 순간들을 다시 기억나게 합니다."
-            ,
-            "link": [
-                
-            ],
-            "url": "/Enchanticket",
-            "img": [
-            ""
-            ],
-            "vid": [
-                ""
-            ],
-            "youtube": [
-                "https://www.youtube.com/embed/gpSdbeyojvg"
-                
-            ],
-            "pdf" : [
-                "project_pdf/Enchanticket",
-                3
-            ]
-        },
-
-        {
             "title": "RAPID",
             "status": "done",
             "year": 2023,
             "scope": "LLM-HCI",
+            "scopeSort": "Research",
             "type" : "team(Developer)",
             "mainDescriptionEN": "Designing Prompt Analytics Dashboards to Analyze Student-ChatGPT Interactions in EFL Writing",
             "mainDescriptionKR": "ChatGPT를 교육 환경에 통합하면서 발생할 수 있는 위험 요소를 해결하기 위해, 6명의 EFL(외국인을 위한 영어 교육)교사를 대상으로 한 'Prompt Analytics Dashboard (PAD)' 프로토타입 RAPID를 개발했습니다. 대시보드에서는 학생과 ChatGPT 간의 채팅 기록과 에세이 편집 기록을 시각화해, 교사들이 학생 행동을 분석하고, 학습 과정을 설계하며, 교수 기술을 개발하는 데 도움을 줍니다.",
@@ -239,6 +216,7 @@
             "status": "done",
             "year": 2023,
             "scope": "UI/UX",
+            "scopeSort": "UI/UX",
             "type" : "TA",
             "mainDescriptionEN": "ID403 System Design",
             "mainDescriptionKR": "GenZ가 사랑하는 공간 그 경험이 더욱 즐겁도록: 새로운 네이버 공간 정보 서비스",
@@ -271,6 +249,7 @@
             "status": "mus",
             "year": "",
             "scope": "",
+            "scopeSort": "",
             "type" : "",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "",
@@ -299,6 +278,7 @@
             "status": "music",
             "year": "2023",
             "scope": "",
+            "scopeSort": "",
             "type" : "Compilation",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "",
@@ -340,6 +320,7 @@
             "status": "music",
             "year": "2021",
             "scope": "",
+            "scopeSort": "",
             "type" : "Solo",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "",
@@ -378,6 +359,7 @@
             "status": "music",
             "year": "2019",
             "scope": "",
+            "scopeSort": "",
             "type" : "Solo",
             "mainDescriptionEN": "",
             "mainDescriptionKR": "",
@@ -412,6 +394,7 @@
             "status": "done",
             "year": 2023,
             "scope": "LLM-HCI",
+            "scopeSort": "Research",
             "type" : "team(Engineer)",
             "mainDescriptionEN": "전자 음악 합주를 위한 디지털 악기 및 몰입 공간 디자인",
             "mainDescriptionKR": "본 연구는 인터랙티브 장치 \"블레임-오-매틱\"의 디자인을 통해 폭력적인 충동 해소를 위한 생성형 AI의 활용 가능성을 탐구한다. 블레임-오-매틱은 최소한의 단어를 입력받는 것만으로 해당 대상이 해를 입을 수 있는 가상의 시나리오를 생성하여 부정적인 생각에 대한 대리 만족을 제공한다. 본 연구에서는 인터뷰와 아이디어 도출을 비롯한 탐색적인 사용자 연구를 통해 참가자들의 반응과 장치에 대한 인식을 관찰하였으며, 부정적인 생각과 관련하여 생성형 AI를 사용하는 데 필요한 현장 지식을 수집하였다. 본 연구는 과장된 풍자와 냉소를 사용하는 블레임-오-매틱의 디자인이 사용자들이 자신의 부정적인 생각을 어떻게 해소하고, 그러한 감정의 중요성을 새롭게 발견하도록 도왔는지 보고한다. 본 연구는 생성형 AI를 이용해 불편한 감정을 다루더라도 사용자들에게 환영받을 수 있으며, 의미 있는 경험을 안정적으로 제공할 수 있음을 시사한다.",
@@ -437,6 +420,38 @@
             ],
             "pdf" : [
                 ""
+            ]
+        }
+    ]
+    ,
+    "data_delete":[
+        {
+            "title": "Enchanticket",
+            "status": "done",
+            "year": 2019,
+            "scope": "Product Design/UX",
+            "type" : "team(3 people)",
+            "mainDescriptionEN": "",
+            "mainDescriptionKR": "티켓에 주문을 외우면, 그때의 모습이 떠오릅니다. 수리 수리 마수리~ 얍!",
+            "subDescription": "여행 중에는 기억하고 싶은 특별한 순간들이 가득합니다. 그리고 그 순간을 기억하기 위해 우리는 사진을 찍습니다. 기술의 발달로 사진을 찍는 것이 매우 쉽고 간단해지면서, 많은 기억들이 사진에 담깁니다. 그러나 디지털 사진을 어느때보다 많이 찍게된 것에 비해 기기에 저장된 사진을 다시 보는 행위는 그리 많이 일어나지 않습니다. EnchanTicket은 AR 기술을 활용하여 여행 중에 생긴 티켓, 영수증과 같은 종이 기념품과 그 순간의 사진을 연결함으로써 디지털 사진을 다시 보며 소중한 순간들을 다시 기억나게 합니다."
+            ,
+            "link": [
+                
+            ],
+            "url": "/Enchanticket",
+            "img": [
+            ""
+            ],
+            "vid": [
+                ""
+            ],
+            "youtube": [
+                "https://www.youtube.com/embed/gpSdbeyojvg"
+                
+            ],
+            "pdf" : [
+                "project_pdf/Enchanticket",
+                3
             ]
         }
     ]
