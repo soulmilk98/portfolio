@@ -123,8 +123,8 @@ function ProjectWrapper(props){
       <section className='project-wrapper'>
       <h1 style={titleStyle}>{props.projectTitle}</h1>
       <table className='project-table'>
-      <th align='start' onClick={()=>{setSort('name')}}>NAME</th>
-      <th align='start' onClick={()=>{setSort('year')}}>YEAR</th>
+      <th align='start' onClick={()=>{setSort('name')}} style={{ backgroundColor: sortState === 'name'|| sortState ==='name1' ? '#6AFF19' : '#fff' }} >NAME</th>
+      <th align='start' onClick={()=>{setSort('year')}}  style={{ backgroundColor: sortState === 'year'||sortState ==='year1' ? '#6AFF19' : '#fff' }} >YEAR</th>
 
       {
         projects.map(function(project, index){
@@ -185,10 +185,14 @@ function ProjectWrapper(props){
       <section className='project-wrapper'>
         <h1 style={titleStyle}>{props.projectTitle}</h1>
         <table className='project-table'>
-        <th align='start' onClick={() => sortState === 'name' ? setSort('name1') : setSort('name')}>NAME</th>
-        <th align='start' onClick={() => sortState === 'scope' ? setSort('scope1') : setSort('scope')}>SCOPE</th>
-        <th align='start' onClick={() => sortState === 'type' ? setSort('type1') : setSort('type')}>WORKING TYPE</th>
-        <th align='start' onClick={() => sortState === 'year' ? setSort('year1') : setSort('year')}>YEAR</th>
+        <th align='start' onClick={() => sortState === 'name' ? setSort('name1') : setSort('name')}
+          style={{ backgroundColor: sortState === 'name'||sortState ==='name1' ? '#6AFF19' : '#fff' }}>NAME</th>
+        <th align='start' onClick={() => sortState === 'scope' ? setSort('scope1') : setSort('scope')}
+          style={{ backgroundColor: sortState === 'scope'||sortState ==='scope1' ? '#6AFF19' : '#fff' }}>SCOPE</th>
+        <th align='start' onClick={() => sortState === 'type' ? setSort('type1') : setSort('type')}
+          style={{ backgroundColor: sortState === 'type'||sortState ==='type1' ? '#6AFF19' : '#fff' }}>WORKING TYPE</th>
+        <th align='start' onClick={() => sortState === 'year' ? setSort('year1') : setSort('year')}
+          style={{ backgroundColor: sortState === 'year'||sortState ==='year1' ? '#6AFF19' : '#fff' }}>YEAR</th>
         
 
         {
@@ -218,18 +222,14 @@ function ProjectWrapper(props){
                 <tr className='project-single-element no-grab'>
                   <td height={"15px"} ></td>
                 </tr>
-
+                
                 <tr className='project-single-element music no-grab'>
-              
                   <td  valign={"bottom"} align={"center"} colSpan={4}>
-                    
                     <a
                       style={{textAlign:"justify", width:"100%",fontWeight: "bold", fontStyle: "italic"}} >
                       {"Music Project"}
                     </a>
-                    
                   </td>
-                  
                 </tr>
               </>
               )
