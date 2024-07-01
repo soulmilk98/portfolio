@@ -82,7 +82,7 @@ function ProjectPDF(props) {
                     {
                       Array.from({length: currentProject.pdf[1]}, (_, index)=>{
                         return(
-                          <img loading="lazy" className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.url}-${index+1}.png?raw=true`} />
+                          <img key={`${currentProject.url}-${index+1}`} loading="lazy" className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/compressed/${currentProject.pdf[0]}/${currentProject.url}-${index+1}.png?raw=true`} />
                         )
                         })
                       
@@ -136,7 +136,7 @@ function ProjectImage(props) {
                 {
                 currentProject.img.map(function(img, index){
                   return(
-                    <img className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/${img}?raw=true`} />
+                    <img key = {img} className="" style={imageStyle} alt="" src={`https://github.com/soulmilk98/portfolio/blob/main/build/${img}?raw=true`} />
                   )
                   })
                 }
@@ -193,7 +193,12 @@ function Youtube(props) {
     }
 }
 
-function ProjectInfo(props) {
+function ProjectInfo(props) {  
+    
+    useEffect(() => {
+        // Scroll to the top of the page when the project changes
+        window.scrollTo(0, 0);
+    }, [props.project]);
     
     let wrapperStyle = {
         opacity: '0',
