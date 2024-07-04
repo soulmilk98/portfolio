@@ -377,7 +377,10 @@ function RightSection(props){
   } else if (value.stat === 'project' && value.selectedProject) {
     return (
       <section className={className}>
-        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>{value.selectedProject.scopeSort}</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
+        <header className='header'><Link className='header-button' onClick={()=>{value.setStat('home')}}>{
+        value.selectedProject.status == "music" && "Music"||
+        
+        value.selectedProject.scopeSort}</Link><Link className='header-button' onClick={()=>{value.setStat('about')}}>&#40;ABOUT&#41;</Link></header>
         <ProjectInfo mobile = {props.mobile} project={value.selectedProject} />
       </section>
     );

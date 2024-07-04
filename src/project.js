@@ -194,11 +194,13 @@ function Youtube(props) {
 }
 
 function ProjectInfo(props) {  
-    
+    let [classStat, setClass] = useState('');
+
     useEffect(() => {
         // Scroll to the top of the page when the project changes
         window.scrollTo(0, 0);
-    }, [props.project]);
+        console.log(props)
+    }, [props]);
     
     let wrapperStyle = {
         opacity: '0',
@@ -222,7 +224,6 @@ function ProjectInfo(props) {
         wordBreak: 'keep-all'
     };
 
-    let [classStat, setClass] = useState('');
 
     function showClass() {
         setClass('show');
