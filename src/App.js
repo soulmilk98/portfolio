@@ -499,7 +499,7 @@ function RightSection(props) {
               CV{" "}
               <a
                 href={
-                  "https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"
+                  "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/CV_2024.pdf"
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -511,7 +511,7 @@ function RightSection(props) {
               Portfolio{" "}
               <a
                 href={
-                  "https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"
+                  "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/Portfolio2024.pdf"
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -731,19 +731,19 @@ function MobileSection(props) {
             CV{" "}
             <a
               href={
-                "https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"
+                "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/CV_2024.pdf"
               }
               target="_blank"
               rel="noreferrer"
               className="link"
             >
               {"(PDF)"}
+              <br />
             </a>
-            <br />
             Portfolio{" "}
             <a
               href={
-                "https://broad-money-d3e.notion.site/f20d6a892872423fb0d369b9dfd25e5a?pvs=4"
+                "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/Portfolio2024.pdf"
               }
               target="_blank"
               rel="noreferrer"
