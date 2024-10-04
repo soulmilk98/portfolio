@@ -499,7 +499,7 @@ function RightSection(props) {
               CV{" "}
               <a
                 href={
-                  "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/CV_2024.pdf"
+                  "https://github.com/soulmilk98/portfolio/raw/main/build/about_pdf/CV_2024.pdf"
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -511,7 +511,7 @@ function RightSection(props) {
               Portfolio{" "}
               <a
                 href={
-                  "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/Portfolio2024.pdf"
+                  "https://github.com/soulmilk98/portfolio/raw/main/build/about_pdf/Portfolio2024.pdf"
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -731,7 +731,7 @@ function MobileSection(props) {
             CV{" "}
             <a
               href={
-                "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/CV_2024.pdf"
+                "https://github.com/soulmilk98/portfolio/raw/main/build/about_pdf/CV_2024.pdf"
               }
               target="_blank"
               rel="noreferrer"
@@ -743,7 +743,7 @@ function MobileSection(props) {
             Portfolio{" "}
             <a
               href={
-                "https://github.com/soulmilk98/portfolio/blob/main/build/about_pdf/Portfolio2024.pdf"
+                "https://github.com/soulmilk98/portfolio/raw/main/build/about_pdf/Portfolio2024.pdf"
               }
               target="_blank"
               rel="noreferrer"
